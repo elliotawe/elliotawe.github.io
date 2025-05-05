@@ -28,12 +28,12 @@ async function loadMenu(){
         document.getElementById("menu-placeholder").innerHTML = html;
 
         // Wait until next tick to ensure DOM is updated
-        requestAnimationFrame(() => {
-            const button = document.querySelector(".menu .container");
-            if (button) {
-                button.addEventListener("pointerdown", () => toggleMenu(button));
-            }
-        });
+        const button = document.querySelector(".menu .container");
+        if (button) {
+            button.addEventListener("pointerdown", () => toggleMenu(button));
+        }
+        // requestAnimationFrame(() => {
+        // });
 
     } catch (error) {
         console.error("Failed to load menu:", error);
