@@ -11,20 +11,48 @@
     <link rel="stylesheet" href="partials/menu/menu.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Elliot Awe</title>
-    <!-- <script src="script.js" defer></script> -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
-<body>
-    <main>
+<body class="bg-black">
+    <div id="canvas-container">
+        <canvas id="particles-canvas" class="absolute inset-0 -z-10 animate-fade-in"></canvas>
+    </div>
+    <main class="bg-gradient-to-tl from-black via-zinc-600/20 to-black w-screen h-screen overflow-hidden">
+        <!-- Top glow line -->
         <section class="hero">
-            <img src="favicon.ico" alt="">
-            <h1>Elliot Awe</h1>
-            <span>Full Stack ( MERN , Nestjs, Laravel, Supabase, TailwindCss) | AI </span>
-            <a href="mailto:elliotawe@outlook.com">talk to me </a>
+            <div
+                class="hidden md:block w-screen h-px bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 animate-fade-left">
+            </div>
+            <!-- Title -->
+
+            <div class="relative z-10 flex items-center justify-center " id="title-container">
+                <h1 id="hero-name"
+                    class="animate-title py-3.5 px-0.5 text-4xl text-transparent bg-white bg-clip-text cursor-default font-bold sm:text-6xl md:text-9xl whitespace-nowrap z-2">
+                    Elliot Awe
+                </h1>
+                <div id="title-image"
+                    class="absolute opacity-0 -top-20 left-0 w-full h-full rounded-md  bg-contain bg-center bg-no-repeat transition duration-1000"
+                    style="background-image: url('favicon.ico');">
+                </div>
+                <div id="what-i-do"
+                    class="absolute opacity-0 text-left text-white text-xl md:text-3xl transition duration-500">
+                    I design and build meaningful digital experiences.
+                </div>
+            </div>
+
+
+            <!-- Bottom glow line -->
+            <div
+                class="hidden md:block w-screen h-px bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 animate-fade-right">
+            </div>
         </section>
-    </main>  
-    </body>
-    <div id="menu-placeholder"></div>
-    <script src="index.js" type="module"></script>
+    </main>
+</body>
+<script src="js/particles.js"></script>
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 </html>
